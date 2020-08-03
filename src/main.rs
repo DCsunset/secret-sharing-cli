@@ -9,7 +9,7 @@ use core::convert::TryFrom;
 
 fn main() {
 	let matches = App::new("Secret Sharing")
-		.version("0.1.0")
+		.version("0.1.1")
 		.about("A secret sharing command line tool using Shamir's Secret Sharing")
 		.subcommand(
 			SubCommand::with_name("split")
