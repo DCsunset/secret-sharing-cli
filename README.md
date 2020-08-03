@@ -26,7 +26,7 @@ secret-sharing-cli split --string <secret> --threshold 2 --number 4
 Then to recover the secret, use any two shares:
 
 ```
-secret-sharing-cli recover --string --threshold 2 <share 1> <share 2>
+secret-sharing-cli recover --string <share 1> <share 2>
 ```
 
 Besides, splitting binary files is also supported using `--file` flags.
