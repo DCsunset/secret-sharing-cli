@@ -1,5 +1,8 @@
 # secret-sharing-cli
 
+[![Crate](https://badgen.net/crates/v/secret-sharing-cli)](https://crates.io/crates/secret-sharing-cli)
+[![License](https://badgen.net/github/license/dcsunset/secret-sharing-cli)](https://github.com/DCsunset/secret-sharing-cli)
+
 A secret sharing command line tool using Shamir's Secret Sharing.
 
 ## Install
