@@ -54,12 +54,11 @@ fn main() {
 				.about("Recover the secret")
 				.arg(
 					Arg::with_name("threshold")
-						.help("Minimum number of shares to reconstruct the secret")
+						.help("Minimum number of shares to reconstruct the secret (optional)")
 						.short("t")
 						.long("threshold")
 						.value_name("threshold")
 						.takes_value(true)
-						.required(true)
 				)
 				.arg(
 					Arg::with_name("string")
@@ -118,7 +117,7 @@ fn main() {
 	}
 	else if let Some(subcommand) = matches.subcommand_matches("recover") {
 		let threshold: u8 = subcommand.value_of("threshold")
-			.unwrap()
+			.unwrap_or("0")
 			.parse()
 			.expect("Invalid threshold!");
 		
@@ -134,7 +133,7 @@ fn main() {
 		let secret = sharks.recover(&shares).unwrap();
 
 		if subcommand.is_present("string") {
-			println!("{}", std::str::from_utf8(secret.as_slice()).unwrap());
+			println!("{}", std::str::from_utf8(secret.as_slice()).expect("Invalid string result"));
 		}
 		else if subcommand.is_present("file") {
 			let filename = subcommand.value_of("file").unwrap();
