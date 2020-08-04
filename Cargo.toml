@@ -1,6 +1,6 @@
 [package]
 name = "secret-sharing-cli"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["DCsunset <dcsunset@protonmail.com>"]
 edition = "2018"
 description = "A secret sharing command line tool using Shamir's Secret Sharing"
