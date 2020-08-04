@@ -3,7 +3,7 @@ extern crate clap;
 extern crate base64;
 
 use sharks::{Share, Sharks};
-use clap::{App, Arg, SubCommand};
+use clap::{App, Arg, SubCommand, AppSettings};
 use std::fs;
 use core::convert::TryFrom;
 
@@ -11,6 +11,7 @@ fn main() {
 	let matches = App::new("Secret Sharing")
 		.version("0.1.1")
 		.about("A secret sharing command line tool using Shamir's Secret Sharing")
+		.setting(AppSettings::ArgRequiredElseHelp)
 		.subcommand(
 			SubCommand::with_name("split")
 				.about("Split the secret")
